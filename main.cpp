@@ -3,14 +3,14 @@
 
 using namespace std;
 
-float Minor(int matrix[3][3], int line, int column) // Функція обчислення мінора.
+float Minor(int matrix[3][3], int line, int column) // Minor calculation function.
 {
 	int detMinor[2][2];
 	int det = NULL;
 	int detApplication = 1;
 	int i = 0, j, jNum = 0;
 
-	for (int l = 0; l < 2; l++) // Викреслення рядків.
+	for (int l = 0; l < 2; l++) // Crossing out lines.
 	{
 		if (i != line)
 		{
@@ -34,7 +34,7 @@ float Minor(int matrix[3][3], int line, int column) // Функція обчислення мінора
 		i++;
 	}
 
-	// Обчислення детермінанту другого порядка.
+	// Calculating the second-order determinant.
 	for (i = 0, j = 0; i < 2; i++, j++)
 	{
 		detApplication *= detMinor[i][j];
@@ -67,7 +67,7 @@ static void InverseMatrix()
 	int detApplication = 1;
 
 
-	cout << "Введіть елементи матриці третього порядку: " << endl;
+	cout << "Enter the elements of the third-order matrix: " << endl;
 	for (i = 0; i < width; i++)
 	{
 		for (j = 0; j < height; j++)
@@ -77,7 +77,7 @@ static void InverseMatrix()
 	}
 	cout << endl;
 
-	// Обчислення детермінанта третього порядку.
+	// Calculating the third-order determinant.
 	for (int l = 0; l < 3; l++)
 	{
 		for (i = 0, j = l; i < 3; i++, j++)
@@ -102,11 +102,11 @@ static void InverseMatrix()
 
 	if (det == 0)
 	{
-		  cout << "розв'зку не існує";
+		  cout << "there is no solution";
 	}
 	else
 	{
-		for (i = 0; i < width; i++) // Вираховування матриці А.
+		for (i = 0; i < width; i++) // Calculating the matrix A.
 		{
 			for (j = 0; j < height; j++)
 			{
@@ -114,7 +114,7 @@ static void InverseMatrix()
 			}
 		}
 
-		cout << "обернена матриця:" << endl;
+		cout << "inverse matrix:" << endl;
 
 		for (i = 0; i < width; i++)
 		{
